@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>New article</h1>
+
+      <form class="new_article" id="new_article" role="form" action="/articles" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="2I5VxtU76ThVpcVE6cKXsSPRThejFaUOk9+icC4D1aS+tP7T7ldyjapc4lCFyri+Q+gLuo4L6HABk3WSow1i9A==">
+        <div class="form-group">
+          <label class="control-label required" for="article_title">Title</label>
+            <%= form_for @article do |f| %>
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+            <% end %>
+            <%= form_for @article do |f| %>
+              <%= f.label :content %>
+              <%= f.text_field :content %>
+            <% end %>
+        </div>
+
+        <input type="submit" name="commit" value="Create Article" class="btn btn-success" data-disable-with=<%= link_to "Create Article", articles_show_path(@article) %>>
+      </form>
+
+<a href="/articles">Back</a>
+
+    </div>
+  </div>
+</div>
